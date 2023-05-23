@@ -1,0 +1,12 @@
+firearc:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: $(SF_ACCOUNT)
+      user: $(DBT_USER)
+      password: $(DBT_PASSWORD)
+      database: FIREARC
+      warehouse: COMPUTE_WH
+      role: ACCOUNTADMIN
+      schema: CORE
