@@ -13,7 +13,8 @@ The documentation for the project includes:
 
 Fire Incidents DAG:
 
-![image](https://github.com/avitman/firearc/assets/49658823/219b1f9d-2e2b-4574-97a2-4ba2c00e65c7)
+![image](https://github.com/avitman/firearc/assets/49658823/3fdbafaa-a35c-4f75-8344-379327caa74d)
+
 
 
 
