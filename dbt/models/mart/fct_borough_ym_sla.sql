@@ -19,4 +19,4 @@ where valid_incident_rspns_time_indc = 'Y'
   and  date_trunc('month', incident_datetime) > (select max(year_month) from {{ this }})
 {% endif %}
 group by 1,2
-order by 1
+order by 1,2
