@@ -1,3 +1,4 @@
+# For our task we assume we use secret manager on AWS
 firearc:
   target: dev
   outputs:
