@@ -17,6 +17,7 @@ The models layers:
 
 Staging: 
 The staging layer serves as a temporary storage area where data can be cleaned, validated, and prepared for further processing using materialized views.
+
 Mart: 
 Data marts are designed to serve the needs of specific business units or user groups, providing them with tailored and efficient access to the data they require. These marts are typically created by filtering, aggregating, and transforming the data from the raw or staging layer, with a focus on delivering actionable insights and facilitating analytical workflows.
 
