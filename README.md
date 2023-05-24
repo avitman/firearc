@@ -21,13 +21,10 @@ Mart:
 Data marts are designed to serve the needs of specific business units or user groups, providing them with tailored and efficient access to the data they require. These marts are typically created by filtering, aggregating, and transforming the data from the raw or staging layer, with a focus on delivering actionable insights and facilitating analytical workflows.
 
 The following models were created:
-stg_fire_incidents (daily, view)
-fct_alarm_box_first_aggr (daily, incremental with upsert strategy)
-The first incident per alarm box.
-fct_alarm_box_last_aggr (daily, incremental with upsert strategy)
-The last incident per alarm box.
-fct_borough_ym_sla (monthly, incremental with append only strategy)
-SLA metrics for each borough and month of a given year, without any historical modifications.
++ stg_fire_incidents (daily, view)
++ fct_alarm_box_first_aggr (daily, incremental with upsert strategy) - The first incident per alarm box.
++ fct_alarm_box_last_aggr (daily, incremental with upsert strategy) - The last incident per alarm box.
++ fct_borough_ym_sla (monthly, incremental with append only strategy) - SLA metrics for each borough and month of a given year, without any historical modifications.
 
 
 Fire Incidents DAG:
