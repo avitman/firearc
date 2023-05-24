@@ -39,9 +39,10 @@ Schedules:
 + Daily at 08:00 UTC.
 + Monthly - First monday each month at 08:00 UTC.
 
-Slack alerts on: 
+Slack alerts on:
++ Raw freshness - table wasn’t updated in the past day. 
 + Failed DAGs.
-+ Table wasn’t updated in the past day.
+
 
 
 
