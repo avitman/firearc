@@ -58,7 +58,7 @@ for item in all_data:
 
 
 # Step 5: Load the data into Snowflake
-# For our task we assume we use secret manager on AWS
+# In our task, we operate under the assumption of utilizing AWS Secret Manager to manage environment variables.
 conn = snowflake.connector.connect(
     user='$(DBT_USER)',
     password='$(DBT_PASSWORD)',
