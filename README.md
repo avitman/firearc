@@ -8,6 +8,7 @@
 ## Raw:
 
 Using a Python process to upload incremental with upsert strategy the fire incident dispatch data API into Snowflake.
+Due to Snowflake's distinctive architecture and automatic indexing capabilities driven by advanced query optimization techniques, we have not implemented any manual indexes.
 
 ## dbt:
 
