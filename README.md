@@ -1,14 +1,15 @@
 ### What's in this repo?
-This repo contains:
+
 1. Python raw data flows
 2. dbt project 
 
 ### Data Flow Description
-##Raw:
+
+## Raw:
 
 Using a Python process to upload incremental with upsert strategy the fire incident dispatch data API into Snowflake.
 
-##dbt:
+## dbt:
 
 Utilizing dbt for data transformation enhances performance, enables version control through Github, ensures high-quality data through robust quality assurance processes, documents data catalog using the documentation portal, and maintains modularity for data lineage.
 
@@ -22,7 +23,7 @@ Data marts are designed to serve the needs of specific business units or user gr
 The following models were created:
 stg_fire_incidents (daily, view)
 fct_alarm_box_first_aggr (daily, incremental with upsert strategy)
-	The first incident per alarm box.
+The first incident per alarm box.
 fct_alarm_box_last_aggr (daily, incremental with upsert strategy)
 The last incident per alarm box.
 fct_borough_ym_sla (monthly, incremental with append only strategy)
@@ -34,7 +35,7 @@ Fire Incidents DAG:
 ![image](https://github.com/avitman/firearc/assets/49658823/3fdbafaa-a35c-4f75-8344-379327caa74d)
 
 
-##Airflow:
+## Airflow (in other repo):
 We utilize Airflow to perform the orchestration.
 Schedules – Daily at 08:00 UTC.
 Slack/Email alerts on: 
