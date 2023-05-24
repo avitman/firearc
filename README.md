@@ -14,12 +14,11 @@ Using a Python process to upload incremental with upsert strategy the fire incid
 Utilizing dbt for data transformation enhances performance, enables version control through Github, ensures high-quality data through robust quality assurance processes, documents data catalog using the documentation portal, and maintains modularity for data lineage.
 
 The models layers:
-
-Staging: 
-The staging layer serves as a temporary storage area where data can be cleaned, validated, and prepared for further processing using materialized views.
-
-Mart: 
-Data marts are designed to serve the needs of specific business units or user groups, providing them with tailored and efficient access to the data they require. These marts are typically created by filtering, aggregating, and transforming the data from the raw or staging layer, with a focus on delivering actionable insights and facilitating analytical workflows.
++ Staging: 
+  The staging layer serves as a temporary storage area where data can be cleaned, validated, and prepared for further processing using materialized views.
++ Mart: 
+  Data marts are designed to serve the needs of specific business units or user groups, providing them with tailored and efficient access to the data they require. These marts are typically created by filtering,   
+  aggregating, and transforming the data from the raw or staging layer, with a focus on delivering actionable insights and facilitating analytical workflows.
 
 The following models were created:
 + stg_fire_incidents (daily, view)
