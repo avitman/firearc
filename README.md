@@ -34,10 +34,12 @@ Fire Incidents DAG:
 
 ## Airflow (in other repo):
 We utilize Airflow to perform the orchestration.
-Schedules – Daily at 08:00 UTC.
+Schedules: 
++ Daily at 08:00 UTC.
++ Monthly - First monday each month at 08:00 UTC.
 Slack/Email alerts on: 
-Failed job.
-Table wasn’t updated in the past day.
++ Failed DAGs.
++ Table wasn’t updated in the past day.
 
 
 
