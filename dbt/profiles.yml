@@ -1,4 +1,4 @@
-# For our task we assume we use secret manager on AWS
+# In our task, we operate under the assumption of utilizing AWS Secret Manager to manage environment variables.
 firearc:
   target: dev
   outputs:
