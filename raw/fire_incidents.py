@@ -58,7 +58,7 @@ for item in all_data:
 
 
 # Step 5: Load the data into Snowflake
-# Establish connection to Snowflake
+# For our task we assume we use secret manager on AWS
 conn = snowflake.connector.connect(
     user='$(DBT_USER)',
     password='$(DBT_PASSWORD)',
@@ -68,10 +68,8 @@ conn = snowflake.connector.connect(
     schema='raw'
 )
 
-# Create a cursor to execute SQL statements
 cursor = conn.cursor()
 
-# Create a table in Snowflake
 create_table_sql = '''
 CREATE TABLE IF NOT EXISTS fire_incidents (
     starfire_incident_id NUMBER(38,0) PRIMARY KEY,
@@ -124,8 +122,6 @@ for item in all_data:
         # Update the record if it already exists
         update_query = f"UPDATE fire_incidents SET incident_datetime = '{item['incident_datetime']}', alarm_box_borough = '{item['alarm_box_borough']}', alarm_box_number = '{item['alarm_box_number']}', alarm_box_location = '{item['alarm_box_location']}', incident_borough = '{item['incident_borough']}', alarm_source_description_tx = '{item['alarm_source_description_tx']}', alarm_level_index_description = '{item['alarm_level_index_description']}', highest_alarm_level = '{item['highest_alarm_level']}', incident_classification = '{item['incident_classification']}', incident_classification_group = '{item['incident_classification_group']}', dispatch_response_seconds_qy = '{item['dispatch_response_seconds_qy']}', first_assignment_datetime = '{item['first_assignment_datetime']}', first_activation_datetime = '{item['first_activation_datetime']}', incident_close_datetime = '{item['incident_close_datetime']}', valid_dispatch_rspns_time_indc = '{item['valid_dispatch_rspns_time_indc']}', valid_incident_rspns_time_indc = '{item['valid_incident_rspns_time_indc']}', incident_response_seconds_qy = '{item['incident_response_seconds_qy']}', incident_travel_tm_seconds_qy = '{item['incident_travel_tm_seconds_qy']}', engines_assigned_quantity = '{item['engines_assigned_quantity']}', ladders_assigned_quantity = '{item['ladders_assigned_quantity']}', other_units_assigned_quantity = '{item['other_units_assigned_quantity']}', zipcode = '{item['zipcode']}', policeprecinct = '{item['policeprecinct']}', citycouncildistrict = '{item['citycouncildistrict']}', communitydistrict = '{item['communitydistrict']}', communityschooldistrict = '{item['communityschooldistrict']}', congressionaldistrict = '{item['congressionaldistrict']}', first_on_scene_datetime = '{item['first_on_scene_datetime']}' WHERE starfire_incident_id = '{item['starfire_incident_id']}'"
         cursor.execute(update_query)
-
-
 
 # Insert transformed data into Snowflake table
 cursor.executemany(insert_sql, transformed_data)
